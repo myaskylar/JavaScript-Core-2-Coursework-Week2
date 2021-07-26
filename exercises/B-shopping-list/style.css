@@ -152,6 +152,11 @@ body {
   background: #87ca8a;
 }
 
+.textAlign {
+    margin: 150px;
+    font-size: 50px;
+ }
+
 @media screen and (min-width: 992px) {
   .navbar-brand > img {
     max-height: 80px;
