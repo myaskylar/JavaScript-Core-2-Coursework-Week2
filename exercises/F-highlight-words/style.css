@@ -133,10 +133,11 @@
  }
  
  .colorButton {
-     margin-bottom: 20px;
-     margin-right: 20px;
-     width: 100px;
-     height: 50px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-left: 10px;
+    width: 100px;
+    height: 30px;
  }
  
  #blueBtn {
@@ -150,6 +151,11 @@
  #greenBtn {
      background: #87ca8a
  }
+
+ .fontSize {
+     font-size: 20px;
+ }
+
  
  @media screen and (min-width: 992px) {
  
