@@ -1,7 +1,44 @@
-function listOfColours(colours) {
-  // Write your code here...
+function listOfColours(colors) {
+  let content = document.querySelector("#content"); //<--- target #content to assign all element
+  let select = document.createElement("select"); //<-- create <select> tag
+  select.className = "fontSize"; //<--- add css style (optional)
+  let p = document.createElement("p"); //<-- create <p> tag
+
+  colors.forEach((color) => {
+    //<---- iterate array
+    let option = document.createElement("option"); //<--- create <option> tag for each color
+    option.innerText = color; //<--- value colors[color]
+    select.appendChild(option); //<--- assign <option> tag inside <select> tag
+  });
+
+  content.append(select, p); // tag <p> leave empty,for later add value by event listener accordingly.
+  // add event listener when value has chosen form <select> ; tag <p> output message "you have selected: chosen value"
+  // and change the <p> color according to chosen value
+  document.querySelector("select").addEventListener("change", function () {
+    //console.log("You selected: ", this.value);
+    if (select.value === "red") {
+      p.style.color = "red";
+      p.innerText = `You have selected: ${select.value}`;
+    } else if (select.value === "blue") {
+      p.style.color = "blue";
+      p.innerText = `You have selected: ${select.value}`;
+    } else if (select.value === "green") {
+      p.style.color = "green";
+      p.innerText = `You have selected: ${select.value}`;
+    } else if (select.value === "yellow") {
+      p.style.color = "yellow";
+      p.innerText = `You have selected: ${select.value}`;
+    } else if (select.value === "pink") {
+      p.style.color = "pink";
+      p.innerText = `You have selected: ${select.value}`;
+    } else {
+      p.style.color = "brown";
+      p.innerText = `You have selected: ${select.value}`;
+    }
+  });
+  content.className = "textAlign"; //<---- add css style (optional)
 }
 
-const colours = ["red", "blue", "green", "yellow", "pink", "brown"];
+const colors = ["red", "blue", "green", "yellow", "pink", "brown"];
 
-listOfColours(colours);
+listOfColours(colors);
