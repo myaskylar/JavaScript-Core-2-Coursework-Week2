@@ -1,5 +1,14 @@
 function listOfNames(arrayOfPeople) {
-  let content = document.querySelector("#content");
+  let content = document.querySelector("#content"); //<----- place to insert h1 h2
+
+  arrayOfPeople.forEach((person) => {
+    let createH1 = document.createElement("h1");
+    let createH2 = document.createElement("h2");
+    createH1.innerText = person.name;
+    createH2.innerText = person.job;
+    content.append(createH1, createH2);
+  });
+  content.className = "textAlign"; //<----- add css style (optional)
 }
 
 let people = [
