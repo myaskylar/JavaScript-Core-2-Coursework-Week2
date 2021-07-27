@@ -1,10 +1,10 @@
 function todoList(toDos) {
-  let content = document.querySelector("#content"); //<---------target content
-  let ul = document.createElement("ul"); //<------create <ul></ul>
+  const content = document.querySelector("#content"); //<---------target content
+  const ul = document.createElement("ul"); //<------create <ul></ul>
 
   toDos.forEach((list) => {
     //<-----------iterate array
-    let li = document.createElement("li"); //<----- create <li> tag for each element
+    const li = document.createElement("li"); //<----- create <li> tag for each element
     li.innerText = list.todo;
     li.addEventListener("click", () => {
       //<----- if click each <li>

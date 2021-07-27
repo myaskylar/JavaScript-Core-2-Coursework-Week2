@@ -1,12 +1,12 @@
 function listOfColours(colors) {
-  let content = document.querySelector("#content"); //<--- target #content to assign all element
-  let select = document.createElement("select"); //<-- create <select> tag
+  const content = document.querySelector("#content"); //<--- target #content to assign all element
+  const select = document.createElement("select"); //<-- create <select> tag
   select.className = "fontSize"; //<--- add css style (optional)
-  let p = document.createElement("p"); //<-- create <p> tag
+  const p = document.createElement("p"); //<-- create <p> tag
 
   colors.forEach((color) => {
     //<---- iterate array
-    let option = document.createElement("option"); //<--- create <option> tag for each color
+    const option = document.createElement("option"); //<--- create <option> tag for each color
     option.innerText = color; //<--- value colors[color]
     select.appendChild(option); //<--- assign <option> tag inside <select> tag
   });
@@ -16,25 +16,8 @@ function listOfColours(colors) {
   // and change the <p> color according to chosen value
   document.querySelector("select").addEventListener("change", function () {
     //console.log("You selected: ", this.value);
-    if (select.value === "red") {
-      p.style.color = "red";
-      p.innerText = `You have selected: ${select.value}`;
-    } else if (select.value === "blue") {
-      p.style.color = "blue";
-      p.innerText = `You have selected: ${select.value}`;
-    } else if (select.value === "green") {
-      p.style.color = "green";
-      p.innerText = `You have selected: ${select.value}`;
-    } else if (select.value === "yellow") {
-      p.style.color = "yellow";
-      p.innerText = `You have selected: ${select.value}`;
-    } else if (select.value === "pink") {
-      p.style.color = "pink";
-      p.innerText = `You have selected: ${select.value}`;
-    } else {
-      p.style.color = "brown";
-      p.innerText = `You have selected: ${select.value}`;
-    }
+     p.innerText = `You have selected: ${this.value}`;
+     p.style.color = this.value;
   });
   content.className = "textAlign"; //<---- add css style (optional)
 }

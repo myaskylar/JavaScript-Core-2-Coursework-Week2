@@ -1,15 +1,15 @@
 function readingList(books) {
-  let content = document.querySelector("#content");
-  let createUl = document.createElement("ul");
-  let bookListTitle = document.createElement("h1");
+  const content = document.querySelector("#content");
+  const createUl = document.createElement("ul");
+  const bookListTitle = document.createElement("h1");
   bookListTitle.innerText = "Book List";
   content.append(bookListTitle);
 
   books.forEach((book) => {
     //create <p>,<img>,<li> elements
-    let createP = document.createElement("p");
-    let createImg = document.createElement("img");
-    let createList = document.createElement("li");
+    const createP = document.createElement("p");
+    const createImg = document.createElement("img");
+    const createList = document.createElement("li");
 
     createP.innerText = `${book.title} - ${book.author}`; // title of book - name of author
 

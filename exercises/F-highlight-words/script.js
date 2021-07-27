@@ -1,43 +1,33 @@
 function highlightWords(paragraph, colors) {
-  let content = document.getElementById("content");
-  let p = document.createElement("p"); //<-- <p></p>
-  let select = document.createElement("select"); //<-- <select></select>
+  const content = document.getElementById("content");
+  const p = document.createElement("p"); //<-- <p></p>
+  const select = document.createElement("select"); //<-- <select></select>
   select.className = "colorButton";
-  let para = paragraph.split(" "); //<---- make paragraph into one array
+  const para = paragraph.split(" "); //<---- make paragraph into one array
 
   // console.log(colors);
   // console.log(paragraph);
   colors.forEach((color) => {
     //<--- iterate array
-    let option = document.createElement("option"); //<--- create ,option> tag for each color
+    const option = document.createElement("option"); //<--- create ,option> tag for each color
     option.innerText = color; //<-- assign value colors[color]
     select.appendChild(option); //<--- assign <option> tag into <select>
   });
 
   para.forEach((word) => {
-    let span = document.createElement("span"); //<-- create <span> tag for each word
+    const span = document.createElement("span"); //<-- create <span> tag for each word
     span.innerText = word + " "; //<-- assign value para[word]
     p.appendChild(span); //<--- assign <span> into <p>
   });
   content.append(select, p);
   content.className = "fontSize"; //<--- add css style (optional)
-  let highlightWord = document.querySelectorAll("span"); //<-- get element all <span>
+  const highlightWord = document.querySelectorAll("span"); //<-- get element all <span>
   Array.from(highlightWord).forEach((word) => {
     //<--- change node list to array
     word.addEventListener("click", () => {
       // for each word <span> selected add style attribute and set it to background color according to value of <select>
       // if <span style:backgroundColor = any color form selected value>; remove attribute style
-      if (select.value === "none" && word.style.backgroundColor === "yellow") {
-        word.removeAttribute("style");
-      } else if (
-        select.value === "none" &&
-        word.style.backgroundColor === "green"
-      ) {
-        word.removeAttribute("style");
-      } else if (
-        select.value === "none" &&
-        word.style.backgroundColor === "blue"
-      ) {
+      if (select.value === "none") {
         word.removeAttribute("style");
       } else {
         word.style.backgroundColor = `${select.value}`;
